@@ -1,6 +1,7 @@
 package com.example.q.launchpad;
 
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -105,31 +106,32 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btn1 = (Button)findViewById(R.id.button1);
-        Button btn2 = (Button)findViewById(R.id.button2);
-        Button btn3 = (Button)findViewById(R.id.button3);
-        Button btn4 = (Button)findViewById(R.id.button4);
-        Button btn5 = (Button)findViewById(R.id.button5);
-        Button btn6 = (Button)findViewById(R.id.button6);
-        Button btn7 = (Button)findViewById(R.id.button7);
-        Button btn8 = (Button)findViewById(R.id.button8);
-        Button btn9 = (Button)findViewById(R.id.button9);
-        Button btn10 = (Button)findViewById(R.id.button10);
-        Button btn11 = (Button)findViewById(R.id.button11);
-        Button btn12 = (Button)findViewById(R.id.button12);
-        Button btn13 = (Button)findViewById(R.id.button13);
-        Button btn14 = (Button)findViewById(R.id.button14);
-        Button btn15 = (Button)findViewById(R.id.button15);
-        Button btn16 = (Button)findViewById(R.id.button16);
+        PadButton btn1 = (PadButton)findViewById(R.id.button1);
+        PadButton btn2 = (PadButton)findViewById(R.id.button2);
+        PadButton btn3 = (PadButton)findViewById(R.id.button3);
+        PadButton btn4 = (PadButton)findViewById(R.id.button4);
+        PadButton btn5 = (PadButton)findViewById(R.id.button5);
+        PadButton btn6 = (PadButton)findViewById(R.id.button6);
+        PadButton btn7 = (PadButton)findViewById(R.id.button7);
+        PadButton btn8 = (PadButton)findViewById(R.id.button8);
+        PadButton btn9 = (PadButton)findViewById(R.id.button9);
+        PadButton btn10 = (PadButton)findViewById(R.id.button10);
+        PadButton btn11 = (PadButton)findViewById(R.id.button11);
+        PadButton btn12 = (PadButton)findViewById(R.id.button12);
+        PadButton btn13 = (PadButton)findViewById(R.id.button13);
+        PadButton btn14 = (PadButton)findViewById(R.id.button14);
+        PadButton btn15 = (PadButton)findViewById(R.id.button15);
+        PadButton btn16 = (PadButton)findViewById(R.id.button16);
+        PadButton btn17 = (PadButton)findViewById(R.id.button17);
+        PadButton btn18 = (PadButton)findViewById(R.id.button18);
 
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-
+        btn1.addMediaPlayer(MediaPlayer.create(this, R.raw.kick_03));
+        btn2.addMediaPlayer(MediaPlayer.create(this, R.raw.hat_01));
 
     }
+
+
+
+
+
 }

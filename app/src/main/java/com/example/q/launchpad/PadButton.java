@@ -2,7 +2,8 @@ package com.example.q.launchpad;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
-import android.view.View;
+import android.util.AttributeSet;
+import android.media.MediaPlayer;
 import android.widget.Button;
 
 import java.io.File;
@@ -12,19 +13,25 @@ import java.io.File;
  */
 
 public class PadButton extends Button {
-    private File sounds;
+    private MediaPlayer mp;
+    Context context;
     public PadButton(Context context) {
         super(context);
+        this.context = context;
     }
 
-    public void addMp3(File file) {
-        this.sounds = file;
-    };
+    public PadButton(Context context, AttributeSet atts){
+        super(context, atts);
+        this.context = context;
+    }
+
+    public void addMediaPlayer(MediaPlayer mp) {
+        this.mp = mp;
+    }
 
     @Override
     public void setOnClickListener(@Nullable OnClickListener l) {
         super.setOnClickListener(l);
-
     }
 
     @Override
