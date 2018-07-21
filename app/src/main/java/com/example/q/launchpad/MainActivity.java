@@ -108,10 +108,10 @@ public class MainActivity extends AppCompatActivity {
 
         final PadButton btn1 = (PadButton)findViewById(R.id.button1);
         final PadButton btn2 = (PadButton)findViewById(R.id.button2);
-        PadButton btn3 = (PadButton)findViewById(R.id.button3);
-        PadButton btn4 = (PadButton)findViewById(R.id.button4);
-        PadButton btn5 = (PadButton)findViewById(R.id.button5);
-        PadButton btn6 = (PadButton)findViewById(R.id.button6);
+        final PadButton btn3 = (PadButton)findViewById(R.id.button3);
+        final PadButton btn4 = (PadButton)findViewById(R.id.button4);
+        final PadButton btn5 = (PadButton)findViewById(R.id.button5);
+        final PadButton btn6 = (PadButton)findViewById(R.id.button6);
         PadButton btn7 = (PadButton)findViewById(R.id.button7);
         PadButton btn8 = (PadButton)findViewById(R.id.button8);
         PadButton btn9 = (PadButton)findViewById(R.id.button9);
@@ -125,8 +125,13 @@ public class MainActivity extends AppCompatActivity {
         PadButton btn17 = (PadButton)findViewById(R.id.button17);
         PadButton btn18 = (PadButton)findViewById(R.id.button18);
 
-        btn1.addMediaPlayer(MediaPlayer.create(this, R.raw.kick_03));
-        btn2.addMediaPlayer(MediaPlayer.create(this, R.raw.hat_01));
+        btn1.addMediaPlayer(MediaPlayer.create(this, R.raw.kick_01));
+        btn2.addMediaPlayer(MediaPlayer.create(this, R.raw.kick_02));
+        btn3.addMediaPlayer(MediaPlayer.create(this, R.raw.kick_03));
+        btn4.addMediaPlayer(MediaPlayer.create(this, R.raw.hat_01));
+        btn5.addMediaPlayer(MediaPlayer.create(this, R.raw.hat_01));
+        btn6.addMediaPlayer(MediaPlayer.create(this, R.raw.hat_01));
+
 
         btn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -139,6 +144,32 @@ public class MainActivity extends AppCompatActivity {
                 btn2.startAudio();
             }
         });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                btn3.startAudio();
+            }
+        });
+
+        btn4.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                btn4.startAudio();
+            }
+        });
+
+        btn5.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                btn5.startAudio();
+            }
+        });
+
+        btn6.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                btn6.startAudio();
+            }
+        });
+
+
     }
 
 
