@@ -39,5 +39,9 @@ public class PadButton extends Button {
         return super.hasOnClickListeners();
     }
 
+    public void startAudio(){
+        this.mp.start();
+    }
+
 
 }

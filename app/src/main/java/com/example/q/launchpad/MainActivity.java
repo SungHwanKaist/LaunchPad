@@ -106,8 +106,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        PadButton btn1 = (PadButton)findViewById(R.id.button1);
-        PadButton btn2 = (PadButton)findViewById(R.id.button2);
+        final PadButton btn1 = (PadButton)findViewById(R.id.button1);
+        final PadButton btn2 = (PadButton)findViewById(R.id.button2);
         PadButton btn3 = (PadButton)findViewById(R.id.button3);
         PadButton btn4 = (PadButton)findViewById(R.id.button4);
         PadButton btn5 = (PadButton)findViewById(R.id.button5);
@@ -128,6 +128,17 @@ public class MainActivity extends AppCompatActivity {
         btn1.addMediaPlayer(MediaPlayer.create(this, R.raw.kick_03));
         btn2.addMediaPlayer(MediaPlayer.create(this, R.raw.hat_01));
 
+        btn1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+               btn1.startAudio();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                btn2.startAudio();
+            }
+        });
     }
 
 
