@@ -104,6 +104,8 @@ public class LoopMediaPlayer {
             createNextMediaPlayerPath();
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -123,6 +125,8 @@ public class LoopMediaPlayer {
             });
             mNextPlayer.prepareAsync();
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

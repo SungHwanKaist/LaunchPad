@@ -19,7 +19,18 @@ public class LoopMediaRecorder extends MediaRecorder {
     public void stopRecord (boolean st) {
         if(st) {
             this.onRecord = !st;
-            this.stop();
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        LoopMediaRecorder.this.stop();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            thread.start();
+
             this.release();
         }
         else{
@@ -40,9 +51,21 @@ public class LoopMediaRecorder extends MediaRecorder {
                 this.prepare();
             } catch (IOException e) {
                 Log.e(LOG_TAG, "prepare() failed");
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-
-            this.start();
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        LoopMediaRecorder.this.start();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            thread.start();
         }
         else {
             this.onRecord = st;

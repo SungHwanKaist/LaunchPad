@@ -1,7 +1,11 @@
 package com.example.q.launchpad;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
+import android.os.Environment;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,12 +17,19 @@ import android.view.View;
 import android.widget.Button;
 import android.media.AudioManager;
 
+import java.io.File;
+
 public class MainActivity extends AppCompatActivity {
     private String mFilename = null;
     private LoopMediaPlayer mPlayer = null;
     private LoopMediaRecorder mRecorder = null;
 //    private LoopMediaRecorder mRecorder = new LoopMediaRecorder(mFilename);
 //    private LoopMediaPlayer mPlayer = new LoopMediaPlayer(getApplicationContext(), mFilename);
+private String[] PERMISSIONS = {
+        Manifest.permission.RECORD_AUDIO,
+        Manifest.permission.READ_EXTERNAL_STORAGE,
+        Manifest.permission.WRITE_EXTERNAL_STORAGE
+};
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu items for use in the action bar
@@ -29,9 +40,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle presses on the action bar items
+        String t = (String) item.getTitle();
         switch (item.getItemId()) {
             case R.id.record:
-                if(item.getTitle().equals(R.string.action_record)) {
+                if(t.equals("record")) {
                     item.setIcon(ContextCompat.getDrawable(this, R.drawable.stop));
                     item.setTitle(R.string.action_stop);
                     startRecord();
@@ -43,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 return true;
             case R.id.play:
-                if(item.getTitle().equals(R.string.action_play)) {
+                if(t.equals("play")) {
                     item.setIcon(ContextCompat.getDrawable(this, R.drawable.stop));
                     item.setTitle(R.string.action_stop);
                     startPlay();
@@ -65,13 +77,17 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             this.mRecorder.stopRecord(this.mRecorder.isRecording());
-            this.mPlayer = new LoopMediaPlayer(this, mFilename);
+            Log.d("FILENAME", this.mFilename);
+//            this.mPlayer = new LoopMediaPlayer(this, this.mFilename);
 
         }
     }
     private void startPlay() {
         if(this.mFilename == null) {
             Log.d("START_PLAY","NO_FILENAME");
+        }
+        else if(mPlayer == null) {
+            Log.d("START_PLAY","NO_PLAYER");
         }
         else{
             //            instantiation must be in onCreate();
@@ -84,6 +100,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void stopPlay() {
+        if(mPlayer == null) {
+            Log.d("STOP_PLAY", "NO_PLAYER");
+            return;
+        }
         if(mPlayer.isPlaying()){
             mPlayer.stop();
         }
@@ -93,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
             this.mPlayer.release();
             this.mPlayer = null;
         }
-        if(this.mFilename == null){
+        else if(this.mFilename == null){
             Log.d("START_RECORD","NO_FILENAME");
         }
         else{
@@ -101,11 +121,27 @@ public class MainActivity extends AppCompatActivity {
             this.mRecorder.startRecord(this.mRecorder.isRecording());
         }
     }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        for( String permission : permissions) {
+            if (ActivityCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED)
+                Log.d("PERMISSIONS",permission + "IS GRANTED");
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        ActivityCompat.requestPermissions(this, PERMISSIONS, 4);
+        String sdcard = Environment.getExternalStorageState();
+        if( !sdcard.equals(Environment.MEDIA_MOUNTED)) {
+            mFilename = Environment.getRootDirectory().getAbsolutePath();
+        }
+        else {
+            mFilename = Environment.getExternalStorageDirectory().getAbsolutePath();
+        }
+        mFilename += "/audiorecordtest.mp3";
         final PadButton btn1 = (PadButton)findViewById(R.id.button1);
         final PadButton btn2 = (PadButton)findViewById(R.id.button2);
         final PadButton btn3 = (PadButton)findViewById(R.id.button3);
