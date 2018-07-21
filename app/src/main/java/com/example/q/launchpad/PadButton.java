@@ -40,6 +40,7 @@ public class PadButton extends Button {
     }
 
     public void startAudio(){
+        this.mp.seekTo(0);
         this.mp.start();
     }
 

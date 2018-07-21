@@ -148,68 +148,166 @@ private String[] PERMISSIONS = {
         final PadButton btn4 = (PadButton)findViewById(R.id.button4);
         final PadButton btn5 = (PadButton)findViewById(R.id.button5);
         final PadButton btn6 = (PadButton)findViewById(R.id.button6);
-        PadButton btn7 = (PadButton)findViewById(R.id.button7);
-        PadButton btn8 = (PadButton)findViewById(R.id.button8);
-        PadButton btn9 = (PadButton)findViewById(R.id.button9);
-        PadButton btn10 = (PadButton)findViewById(R.id.button10);
-        PadButton btn11 = (PadButton)findViewById(R.id.button11);
-        PadButton btn12 = (PadButton)findViewById(R.id.button12);
-        PadButton btn13 = (PadButton)findViewById(R.id.button13);
-        PadButton btn14 = (PadButton)findViewById(R.id.button14);
-        PadButton btn15 = (PadButton)findViewById(R.id.button15);
-        PadButton btn16 = (PadButton)findViewById(R.id.button16);
-        PadButton btn17 = (PadButton)findViewById(R.id.button17);
-        PadButton btn18 = (PadButton)findViewById(R.id.button18);
+        final PadButton btn7 = (PadButton)findViewById(R.id.button7);
+        final PadButton btn8 = (PadButton)findViewById(R.id.button8);
+        final PadButton btn9 = (PadButton)findViewById(R.id.button9);
+        final PadButton btn10 = (PadButton)findViewById(R.id.button10);
+        final PadButton btn11 = (PadButton)findViewById(R.id.button11);
+        final PadButton btn12 = (PadButton)findViewById(R.id.button12);
+        final PadButton btn13 = (PadButton)findViewById(R.id.button13);
+        final PadButton btn14 = (PadButton)findViewById(R.id.button14);
+        final PadButton btn15 = (PadButton)findViewById(R.id.button15);
+        final PadButton btn16 = (PadButton)findViewById(R.id.button16);
+        final PadButton btn17 = (PadButton)findViewById(R.id.button17);
+        final PadButton btn18 = (PadButton)findViewById(R.id.button18);
+        final PadButton btn19 = (PadButton)findViewById(R.id.button19);
+        final PadButton btn20 = (PadButton)findViewById(R.id.button20);
+        final PadButton btn21 = (PadButton)findViewById(R.id.button21);
+        final PadButton btn22 = (PadButton)findViewById(R.id.button22);
+        final PadButton btn23 = (PadButton)findViewById(R.id.button23);
+        final PadButton btn24 = (PadButton)findViewById(R.id.button24);
 
-        btn1.addMediaPlayer(MediaPlayer.create(this, R.raw.kick_01));
-        btn2.addMediaPlayer(MediaPlayer.create(this, R.raw.kick_02));
-        btn3.addMediaPlayer(MediaPlayer.create(this, R.raw.kick_03));
-        btn4.addMediaPlayer(MediaPlayer.create(this, R.raw.hat_01));
-        btn5.addMediaPlayer(MediaPlayer.create(this, R.raw.hat_01));
-        btn6.addMediaPlayer(MediaPlayer.create(this, R.raw.hat_01));
 
+
+        btn1.addMediaPlayer(MediaPlayer.create(this, R.raw.bass1));
+        btn2.addMediaPlayer(MediaPlayer.create(this, R.raw.bass2));
+        btn3.addMediaPlayer(MediaPlayer.create(this, R.raw.bell1));
+        btn4.addMediaPlayer(MediaPlayer.create(this, R.raw.hihat1));
+        btn5.addMediaPlayer(MediaPlayer.create(this, R.raw.hihat2));
+        btn6.addMediaPlayer(MediaPlayer.create(this, R.raw.hihat3));
+        btn7.addMediaPlayer(MediaPlayer.create(this, R.raw.snare1));
+        btn8.addMediaPlayer(MediaPlayer.create(this, R.raw.snare2));
+        btn9.addMediaPlayer(MediaPlayer.create(this, R.raw.snare3));
+        btn10.addMediaPlayer(MediaPlayer.create(this, R.raw.kick1));
+        btn11.addMediaPlayer(MediaPlayer.create(this, R.raw.kick2));
+        btn12.addMediaPlayer(MediaPlayer.create(this, R.raw.kick3));
+        btn13.addMediaPlayer(MediaPlayer.create(this, R.raw.drum1));
+        btn14.addMediaPlayer(MediaPlayer.create(this, R.raw.drum2));
+        btn15.addMediaPlayer(MediaPlayer.create(this, R.raw.drum3));
+        btn16.addMediaPlayer(MediaPlayer.create(this, R.raw.clap1));
+        btn17.addMediaPlayer(MediaPlayer.create(this, R.raw.clap2));
+        btn18.addMediaPlayer(MediaPlayer.create(this, R.raw.sound1));
 
         btn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-               btn1.startAudio();
+                btn1.startAudio();
             }
         });
-
         btn2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 btn2.startAudio();
             }
         });
-
         btn3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 btn3.startAudio();
             }
         });
-
         btn4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 btn4.startAudio();
             }
         });
-
         btn5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 btn5.startAudio();
             }
         });
-
         btn6.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 btn6.startAudio();
             }
         });
-
-
+        btn7.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                btn7.startAudio();
+            }
+        });
+        btn8.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                btn8.startAudio();
+            }
+        });
+        btn9.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                btn9.startAudio();
+            }
+        });
+        btn10.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                btn10.startAudio();
+            }
+        });
+        btn11.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                btn11.startAudio();
+            }
+        });
+        btn12.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                btn12.startAudio();
+            }
+        });
+        btn13.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                btn13.startAudio();
+            }
+        });
+        btn14.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                btn14.startAudio();
+            }
+        });
+        btn15.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                btn15.startAudio();
+            }
+        });
+        btn16.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                btn16.startAudio();
+            }
+        });
+        btn17.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                btn17.startAudio();
+            }
+        });
+        btn18.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                btn18.startAudio();
+            }
+        });
+        btn19.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                btn14.startAudio();
+            }
+        });
+        btn20.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                btn15.startAudio();
+            }
+        });
+        btn21.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                btn16.startAudio();
+            }
+        });
+        btn22.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                btn17.startAudio();
+            }
+        });
+        btn23.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                btn18.startAudio();
+            }
+        });
+        btn24.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                btn18.startAudio();
+            }
+        });
     }
-
-
-
-
 
 }
