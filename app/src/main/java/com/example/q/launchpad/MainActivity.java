@@ -96,17 +96,10 @@ private String[] PERMISSIONS = {
         if(this.mFilename == null) {
             Log.d("START_PLAY","NO_FILENAME");
         }
-        else if(mPlayer == null) {
-            Log.d("START_PLAY","NO_PLAYER");
-        }
         else{
-            if(mPlayer.isPlaying()) {
-                Log.d("START_PLAY","ALREADY_STARTED");
-            }
-            else{
-                Log.d("START_PLAY","STARTED");
-                this.mPlayer.create(this, this.mFilename);
-            }
+            Log.d("START_PLAY","STARTED");
+//                this.mPlayer.create(this, this.mFilename);
+            this.mPlayer = new LoopMediaPlayer(getApplicationContext(),this.mFilename);
         }
     }
     private void stopPlay() {
@@ -161,13 +154,8 @@ private String[] PERMISSIONS = {
             mFilename = Environment.getExternalStorageDirectory().getAbsolutePath();
         }
         mFilename += "/audiorecordtest.mp3";
-<<<<<<< HEAD
-        mPlayer = new LoopMediaPlayer(getApplicationContext(),this.mFilename );
-        mPlayer.stop();
-        mPlayer.reset();
-        mPlayer.release();
+//        mPlayer = new LoopMediaPlayer(getApplicationContext(),this.mFilename );
         Log.d("FILENAME_ON_CREATE",mFilename);
-=======
 
         final SoundPool beatpool = new SoundPool(24, AudioManager.STREAM_MUSIC, 0);
         final int beat1 = beatpool.load(this, R.raw.bass1, 1);
@@ -195,8 +183,6 @@ private String[] PERMISSIONS = {
         final int beat23 = beatpool.load(this, R.raw.snare2, 1);
         final int beat24 = beatpool.load(this, R.raw.snare3, 1);
 
-
->>>>>>> bc1e5469c686dff39c5d71491f0f76a6219b05fb
         final PadButton btn1 = (PadButton)findViewById(R.id.button1);
         final PadButton btn2 = (PadButton)findViewById(R.id.button2);
         final PadButton btn3 = (PadButton)findViewById(R.id.button3);
