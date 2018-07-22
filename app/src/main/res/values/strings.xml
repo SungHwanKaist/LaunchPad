@@ -2,6 +2,7 @@
     <string name="app_name">LaunchPad</string>
     <string name="action_record">record</string>
     <string name="action_play">play</string>
+    <string name="action_stop_record">stop</string>
     <string name="action_stop">stop</string>
 
 </resources>

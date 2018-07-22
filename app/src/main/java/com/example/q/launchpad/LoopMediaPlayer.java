@@ -11,88 +11,26 @@ import android.os.Build;
 import android.util.Log;
 import java.io.IOException;
 
-
 public class LoopMediaPlayer {
 
-
-    private static final String TAG = LoopMediaPlayer.class.getName();
+    public static final String TAG = LoopMediaPlayer.class.getSimpleName();
     private Context mContext = null;
     private int mResId = 0;
+    private int mCounter = 1;
     private String mPath = null;
 
     private MediaPlayer mCurrentPlayer = null;
     private MediaPlayer mNextPlayer = null;
 
-    /**
-     * Creating instance of the player with given context and raw resource
-     *
-     * @param context - context
-     * @param resId   - raw resource
-     * @return new instance
-     */
-    public static LoopMediaPlayer create(Context context, int resId) {
-        return new LoopMediaPlayer(context, resId);
-    }
-
-
-    private LoopMediaPlayer(Context context, int resId) {
-        mContext = context;
-        mResId = resId;
-        try {
-            AssetFileDescriptor afd = context.getResources().openRawResourceFd(mResId);
-            mCurrentPlayer = new MediaPlayer();
-            mCurrentPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
-            mCurrentPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-                @Override
-                public void onPrepared(MediaPlayer mediaPlayer) {
-                    mCurrentPlayer.start();
-                }
-            });
-            mCurrentPlayer.prepareAsync();
-            createNextMediaPlayerRaw();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void createNextMediaPlayerRaw() {
-        AssetFileDescriptor afd = mContext.getResources().openRawResourceFd(mResId);
-        mNextPlayer = new MediaPlayer();
-        try {
-            mNextPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
-            mNextPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-                @Override
-                public void onPrepared(MediaPlayer mp) {
-                    mNextPlayer.seekTo(0);
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                        mCurrentPlayer.setNextMediaPlayer(mNextPlayer);
-                    }
-                    mCurrentPlayer.setOnCompletionListener(onCompletionListener);
-                }
-            });
-            mNextPlayer.prepareAsync();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    /**
-     * Creating instance of the player with given context
-     * and internal memory/SD path resource
-     *
-     * @param context - context
-     * @param path    - internal memory/SD path to sound resource
-     * @return new instance
-     */
     public static LoopMediaPlayer create(Context context, String path) {
         return new LoopMediaPlayer(context, path);
     }
 
     protected LoopMediaPlayer(Context context, String path) {
-        mContext = context;
+        this.mContext = context;
         mPath = path;
         try {
+            mCurrentPlayer = new MediaPlayer();
             mCurrentPlayer.setDataSource(mPath);
             mCurrentPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                 @Override
@@ -132,17 +70,17 @@ public class LoopMediaPlayer {
 
     }
 
+    private MediaPlayer.OnCompletionListener onCompletionListener = new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mediaPlayer) {
+            mediaPlayer.release();
+            mCurrentPlayer = mNextPlayer;
 
-    private final MediaPlayer.OnCompletionListener onCompletionListener =
-            new MediaPlayer.OnCompletionListener() {
-                @Override
-                public void onCompletion(MediaPlayer mediaPlayer) {
-                    mCurrentPlayer = mNextPlayer;
-                    createNextMediaPlayerRaw();
-                    mediaPlayer.release();
-                }
-            };
+            createNextMediaPlayerPath();
 
+            Log.d(TAG, String.format("Loop #%d", ++mCounter));
+        }
+    };
 
     public boolean isPlaying() throws IllegalStateException {
         if (mCurrentPlayer != null) {

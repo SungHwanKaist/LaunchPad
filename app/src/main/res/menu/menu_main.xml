@@ -7,11 +7,16 @@
         android:icon="@drawable/manual_record"
         android:title="@string/action_record"
         app:showAsAction="ifRoom" />
-
-    <!-- 오버플로우 공간 안에 있는 "셋팅" 액션 아이템 -->
+    <item android:id="@+id/stop_record"
+        android:title="@string/action_stop_record"
+        android:icon="@drawable/stop"
+        app:showAsAction="ifRoom" />
     <item android:id="@+id/play"
         android:title="@string/action_play"
         android:icon="@drawable/play_arrow"
         app:showAsAction="ifRoom" />
-
+    <item android:id="@+id/stop_play"
+        android:title="@string/action_stop"
+        android:icon="@drawable/stop"
+        app:showAsAction="ifRoom" />
 </menu>

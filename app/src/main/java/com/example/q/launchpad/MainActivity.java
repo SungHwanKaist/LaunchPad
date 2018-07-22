@@ -22,9 +22,11 @@ import java.io.File;
 public class MainActivity extends AppCompatActivity {
     private String mFilename = null;
     private LoopMediaPlayer mPlayer = null;
+//    private MediaPlayer mPlayer = null;
     private LoopMediaRecorder mRecorder = null;
+    private Menu menu;
 //    private LoopMediaRecorder mRecorder = new LoopMediaRecorder(mFilename);
-//    private LoopMediaPlayer mPlayer = new LoopMediaPlayer(getApplicationContext(), mFilename);
+//    private LoopMediaPlayer
 private String[] PERMISSIONS = {
         Manifest.permission.RECORD_AUDIO,
         Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -35,7 +37,16 @@ private String[] PERMISSIONS = {
         // Inflate the menu items for use in the action bar
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
+        MenuItem item = menu.findItem(R.id.stop_record);
+        MenuItem item2 = menu.findItem(R.id.stop_play);
+        item.setVisible(false);
+        item2.setVisible(false);
         return super.onCreateOptionsMenu(menu);
+    }
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        this.menu = menu;
+        return super.onPrepareOptionsMenu(menu);
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -43,29 +54,29 @@ private String[] PERMISSIONS = {
         String t = (String) item.getTitle();
         switch (item.getItemId()) {
             case R.id.record:
-                if(t.equals("record")) {
-                    item.setIcon(ContextCompat.getDrawable(this, R.drawable.stop));
-                    item.setTitle(R.string.action_stop);
                     startRecord();
-                }
-                else{
-                    item.setIcon(ContextCompat.getDrawable(this, R.drawable.manual_record));
-                    item.setTitle(R.string.action_record);
+                    item.setVisible(false);
+                    MenuItem it = this.menu.findItem(R.id.stop_record);
+                    it.setVisible(true);
+                return true;
+            case R.id.stop_record:
                     stopRecord();
-                }
-                return true;
+                    item.setVisible(false);
+                    MenuItem it2 = this.menu.findItem(R.id.record);
+                    it2.setVisible(true);
+                    return true;
             case R.id.play:
-                if(t.equals("play")) {
-                    item.setIcon(ContextCompat.getDrawable(this, R.drawable.stop));
-                    item.setTitle(R.string.action_stop);
                     startPlay();
-                }
-                else{
-                    item.setIcon(ContextCompat.getDrawable(this, R.drawable.play_arrow));
-                    item.setTitle(R.string.action_play);
+                    item.setVisible(false);
+                    MenuItem it3 = this.menu.findItem(R.id.stop_play);
+                    it3.setVisible(true);
+                    return true;
+            case R.id.stop_play:
                     stopPlay();
-                }
-                return true;
+                    item.setVisible(false);
+                    MenuItem it4 = this.menu.findItem(R.id.play);
+                    it4.setVisible(true);
+                    return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -75,11 +86,9 @@ private String[] PERMISSIONS = {
         if(this.mRecorder == null) {
             Log.d("STOP_RECORD", "NO_RECORDER");
         }
-        else {
-            this.mRecorder.stopRecord(this.mRecorder.isRecording());
+        else if(this.mRecorder.isRecording()){
+            this.mRecorder.stopRecord();
             Log.d("FILENAME", this.mFilename);
-//            this.mPlayer = new LoopMediaPlayer(this, this.mFilename);
-
         }
     }
     private void startPlay() {
@@ -90,12 +99,12 @@ private String[] PERMISSIONS = {
             Log.d("START_PLAY","NO_PLAYER");
         }
         else{
-            //            instantiation must be in onCreate();
             if(mPlayer.isPlaying()) {
                 Log.d("START_PLAY","ALREADY_STARTED");
             }
             else{
-                mPlayer.start();
+                Log.d("START_PLAY","STARTED");
+                this.mPlayer.create(this, this.mFilename);
             }
         }
     }
@@ -104,21 +113,30 @@ private String[] PERMISSIONS = {
             Log.d("STOP_PLAY", "NO_PLAYER");
             return;
         }
-        if(mPlayer.isPlaying()){
+//        if(mPlayer.isPlaying()){
             mPlayer.stop();
-        }
+            mPlayer.reset();
+            mPlayer.release();
+//        }
+//        else {
+//            Log.d("STOP_PLAY", "NOT_ON_PLAYING");
+//        }
     }
     private void startRecord(){
-        if(this.mPlayer != null) {
-            this.mPlayer.release();
-            this.mPlayer = null;
-        }
-        else if(this.mFilename == null){
+//        if(this.mPlayer != null) {
+//            this.mPlayer.reset();
+//            this.mPlayer.release();
+//            this.mPlayer = null;
+//        }
+        if(this.mFilename == null){
             Log.d("START_RECORD","NO_FILENAME");
         }
         else{
             this.mRecorder = new LoopMediaRecorder(this.mFilename);
-            this.mRecorder.startRecord(this.mRecorder.isRecording());
+            if(!this.mRecorder.isRecording()) {
+                this.mRecorder.startRecord();
+                Log.d("START_RECORD","STARTED");
+            }
         }
     }
 
@@ -142,6 +160,11 @@ private String[] PERMISSIONS = {
             mFilename = Environment.getExternalStorageDirectory().getAbsolutePath();
         }
         mFilename += "/audiorecordtest.mp3";
+        mPlayer = new LoopMediaPlayer(getApplicationContext(),this.mFilename );
+        mPlayer.stop();
+        mPlayer.reset();
+        mPlayer.release();
+        Log.d("FILENAME_ON_CREATE",mFilename);
         final PadButton btn1 = (PadButton)findViewById(R.id.button1);
         final PadButton btn2 = (PadButton)findViewById(R.id.button2);
         final PadButton btn3 = (PadButton)findViewById(R.id.button3);

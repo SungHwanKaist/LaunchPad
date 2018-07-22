@@ -1,7 +1,9 @@
 package com.example.q.launchpad;
 
+import android.content.Context;
 import android.media.MediaRecorder;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.io.IOException;
 
@@ -16,60 +18,36 @@ public class LoopMediaRecorder extends MediaRecorder {
     public boolean isRecording() {
         return this.onRecord;
     }
-    public void stopRecord (boolean st) {
-        if(st) {
-            this.onRecord = !st;
-            Thread thread = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        LoopMediaRecorder.this.stop();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-            thread.start();
-
-            this.release();
-        }
-        else{
-            this.onRecord = st;
-        }
+    public void stopRecord () {
+            try {
+                this.stop();
+                this.reset();
+                this.release();
+                this.onRecord = false;
+            } catch ( Exception e) {
+                e.printStackTrace();
+            }
     }
     public LoopMediaRecorder(String mFileName) {
 
         this.setAudioSource(AudioSource.MIC);
-        this.setOutputFormat(OutputFormat.MPEG_2_TS);
+        this.setOutputFormat(OutputFormat.MPEG_4);
         this.setOutputFile(mFileName);
-        this.setAudioEncoder(AudioEncoder.AMR_NB);
+        this.setAudioEncoder(AudioEncoder.DEFAULT);
     }
-    public void startRecord (boolean st){
-        if(!st) {
-            this.onRecord = !st;
+    public void startRecord (){
             try {
                 this.prepare();
+                this.start();
+                this.onRecord = true;
             } catch (IOException e) {
                 Log.e(LOG_TAG, "prepare() failed");
                 e.printStackTrace();
+                this.onRecord = false;
             } catch (Exception e) {
+                this.onRecord = false;
                 e.printStackTrace();
             }
-            Thread thread = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        LoopMediaRecorder.this.start();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-            thread.start();
-        }
-        else {
-            this.onRecord = st;
-        }
     }
 
 }
