@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -142,6 +143,34 @@ private String[] PERMISSIONS = {
             mFilename = Environment.getExternalStorageDirectory().getAbsolutePath();
         }
         mFilename += "/audiorecordtest.mp3";
+
+        final SoundPool beatpool = new SoundPool(24, AudioManager.STREAM_MUSIC, 0);
+        final int beat1 = beatpool.load(this, R.raw.bass1, 1);
+        final int beat2 = beatpool.load(this, R.raw.bass2, 1);
+        final int beat3 = beatpool.load(this, R.raw.bass3, 1);
+        final int beat4 = beatpool.load(this, R.raw.bell1, 1);
+        final int beat5 = beatpool.load(this, R.raw.clap1, 1);
+        final int beat6 = beatpool.load(this, R.raw.clap2, 1);
+        final int beat7 = beatpool.load(this, R.raw.crush1, 1);
+        final int beat8 = beatpool.load(this, R.raw.drum1, 1);
+        final int beat9 = beatpool.load(this, R.raw.drum2, 1);
+        final int beat10 = beatpool.load(this, R.raw.drum3, 1);
+        final int beat11 = beatpool.load(this, R.raw.drum4, 1);
+        final int beat12 = beatpool.load(this, R.raw.hihat1, 1);
+        final int beat13 = beatpool.load(this, R.raw.hihat2, 1);
+        final int beat14 = beatpool.load(this, R.raw.hihat3, 1);
+        final int beat15 = beatpool.load(this, R.raw.hihat4, 1);
+        final int beat16 = beatpool.load(this, R.raw.hihat5, 1);
+        final int beat17 = beatpool.load(this, R.raw.kick1, 1);
+        final int beat18 = beatpool.load(this, R.raw.kick2, 1);
+        final int beat19 = beatpool.load(this, R.raw.kick3, 1);
+        final int beat20 = beatpool.load(this, R.raw.kick4, 1);
+        final int beat21 = beatpool.load(this, R.raw.kick5, 1);
+        final int beat22 = beatpool.load(this, R.raw.snare1, 1);
+        final int beat23 = beatpool.load(this, R.raw.snare2, 1);
+        final int beat24 = beatpool.load(this, R.raw.snare3, 1);
+
+
         final PadButton btn1 = (PadButton)findViewById(R.id.button1);
         final PadButton btn2 = (PadButton)findViewById(R.id.button2);
         final PadButton btn3 = (PadButton)findViewById(R.id.button3);
@@ -168,150 +197,124 @@ private String[] PERMISSIONS = {
         final PadButton btn24 = (PadButton)findViewById(R.id.button24);
 
 
-
-        btn1.addMediaPlayer(MediaPlayer.create(this, R.raw.bass1));
-        btn2.addMediaPlayer(MediaPlayer.create(this, R.raw.bass2));
-        btn3.addMediaPlayer(MediaPlayer.create(this, R.raw.bass3));
-        btn4.addMediaPlayer(MediaPlayer.create(this, R.raw.bell1));
-        btn5.addMediaPlayer(MediaPlayer.create(this, R.raw.hihat1));
-        btn6.addMediaPlayer(MediaPlayer.create(this, R.raw.hihat2));
-        btn7.addMediaPlayer(MediaPlayer.create(this, R.raw.hihat3));
-        btn8.addMediaPlayer(MediaPlayer.create(this, R.raw.hihat4));
-        btn9.addMediaPlayer(MediaPlayer.create(this, R.raw.hihat5));
-        btn10.addMediaPlayer(MediaPlayer.create(this, R.raw.kick1));
-        btn11.addMediaPlayer(MediaPlayer.create(this, R.raw.kick2));
-        btn12.addMediaPlayer(MediaPlayer.create(this, R.raw.kick3));
-        btn13.addMediaPlayer(MediaPlayer.create(this, R.raw.kick4));
-        btn14.addMediaPlayer(MediaPlayer.create(this, R.raw.drum1));
-        btn15.addMediaPlayer(MediaPlayer.create(this, R.raw.drum2));
-        btn16.addMediaPlayer(MediaPlayer.create(this, R.raw.drum3));
-        btn17.addMediaPlayer(MediaPlayer.create(this, R.raw.clap1));
-        btn18.addMediaPlayer(MediaPlayer.create(this, R.raw.clap2));
-        btn19.addMediaPlayer(MediaPlayer.create(this, R.raw.sound1));
-        btn20.addMediaPlayer(MediaPlayer.create(this, R.raw.sound2));
-        btn21.addMediaPlayer(MediaPlayer.create(this, R.raw.sound3));
-        btn22.addMediaPlayer(MediaPlayer.create(this, R.raw.sound4));
-        btn23.addMediaPlayer(MediaPlayer.create(this, R.raw.sound5));
-        btn24.addMediaPlayer(MediaPlayer.create(this, R.raw.sound6));
-
         btn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn1.startAudio();
+                beatpool.play(beat1, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn2.startAudio();
+                beatpool.play(beat2, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
         btn3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn3.startAudio();
+                beatpool.play(beat3, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
         btn4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn4.startAudio();
+                beatpool.play(beat4, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
         btn5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn5.startAudio();
+                beatpool.play(beat5, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
         btn6.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn6.startAudio();
+                beatpool.play(beat6, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
         btn7.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn7.startAudio();
+                beatpool.play(beat7, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
         btn8.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn8.startAudio();
+                beatpool.play(beat8, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
         btn9.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn9.startAudio();
+                beatpool.play(beat9, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
         btn10.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn10.startAudio();
+                beatpool.play(beat10, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
         btn11.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn11.startAudio();
+                beatpool.play(beat11, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
         btn12.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn12.startAudio();
+                beatpool.play(beat12, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
         btn13.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn13.startAudio();
+                beatpool.play(beat13, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
         btn14.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn14.startAudio();
+                beatpool.play(beat14, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
         btn15.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn15.startAudio();
+                beatpool.play(beat15, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
         btn16.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn16.startAudio();
+                beatpool.play(beat16, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
         btn17.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn17.startAudio();
+                beatpool.play(beat17, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
         btn18.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn18.startAudio();
+                beatpool.play(beat18, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
         btn19.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn19.startAudio();
+                beatpool.play(beat19, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
         btn20.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn20.startAudio();
+                beatpool.play(beat20, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
         btn21.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn21.startAudio();
+                beatpool.play(beat21, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
         btn22.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn22.startAudio();
+                beatpool.play(beat22, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
         btn23.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn23.startAudio();
+                beatpool.play(beat23, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
         btn24.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn24.startAudio();
+                beatpool.play(beat24, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
     }
