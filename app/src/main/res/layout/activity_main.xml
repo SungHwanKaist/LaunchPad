@@ -22,6 +22,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
+            android:layout_margin="5dip"
             android:background="@color/yellow"/>
 
         <com.example.q.launchpad.PadButton
@@ -29,6 +30,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
+            android:layout_margin="5dip"
             android:background="@color/purple"/>
 
         <com.example.q.launchpad.PadButton
@@ -36,6 +38,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
+            android:layout_margin="5dip"
             android:background="@color/slate_gray"/>
 
         <com.example.q.launchpad.PadButton
@@ -43,6 +46,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
+            android:layout_margin="5dip"
             android:background="@color/forest_green"/>
 
         <com.example.q.launchpad.PadButton
@@ -50,6 +54,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
+            android:layout_margin="5dip"
             android:background="@color/cyan"/>
 
         <com.example.q.launchpad.PadButton
@@ -57,6 +62,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
+            android:layout_margin="5dip"
             android:background="@color/indigo"/>
 
         <com.example.q.launchpad.PadButton
@@ -64,6 +70,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
+            android:layout_margin="5dip"
             android:background="@color/light_blue"/>
 
         <com.example.q.launchpad.PadButton
@@ -71,6 +78,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
+            android:layout_margin="5dip"
             android:background="@color/chocolate"/>
 
         <com.example.q.launchpad.PadButton
@@ -78,6 +86,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
+            android:layout_margin="5dip"
             android:background="@color/red"/>
 
         <com.example.q.launchpad.PadButton
@@ -85,6 +94,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
+            android:layout_margin="5dip"
             android:background="@color/ivory"/>
 
         <com.example.q.launchpad.PadButton
@@ -92,13 +102,15 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
-            android:background="@color/black"/>
+            android:layout_margin="5dip"
+            android:background="@color/teal"/>
 
         <com.example.q.launchpad.PadButton
             android:id="@+id/button12"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
+            android:layout_margin="5dip"
             android:background="@color/khaki"/>
 
         <com.example.q.launchpad.PadButton
@@ -106,6 +118,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
+            android:layout_margin="5dip"
             android:background="@color/orange"/>
 
         <com.example.q.launchpad.PadButton
@@ -113,6 +126,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
+            android:layout_margin="5dip"
             android:background="@color/blue"/>
 
         <com.example.q.launchpad.PadButton
@@ -120,6 +134,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
+            android:layout_margin="5dip"
             android:background="@color/violet"/>
 
         <com.example.q.launchpad.PadButton
@@ -127,6 +142,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
+            android:layout_margin="5dip"
             android:background="@color/pink"/>
 
         <com.example.q.launchpad.PadButton
@@ -134,6 +150,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
+            android:layout_margin="5dip"
             android:background="@color/maroon"/>
 
         <com.example.q.launchpad.PadButton
@@ -141,6 +158,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
+            android:layout_margin="5dip"
             android:background="@color/white"/>
 
         <com.example.q.launchpad.PadButton
@@ -148,6 +166,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
+            android:layout_margin="5dip"
             android:background="@color/navy"/>
 
         <com.example.q.launchpad.PadButton
@@ -155,6 +174,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
+            android:layout_margin="5dip"
             android:background="@color/lime"/>
 
         <com.example.q.launchpad.PadButton
@@ -162,6 +182,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
+            android:layout_margin="5dip"
             android:background="@color/crimson"/>
 
         <com.example.q.launchpad.PadButton
@@ -169,6 +190,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
+            android:layout_margin="5dip"
             android:background="@color/salmon"/>
 
         <com.example.q.launchpad.PadButton
@@ -176,6 +198,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
+            android:layout_margin="5dip"
             android:background="@color/cold"/>
 
         <com.example.q.launchpad.PadButton
@@ -183,12 +206,15 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
+            android:layout_margin="5dip"
             android:background="@color/dark_gray"/>
     </GridLayout>
 
     <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
+
     </LinearLayout>
 </LinearLayout>
