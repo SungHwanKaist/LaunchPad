@@ -160,11 +160,17 @@ private String[] PERMISSIONS = {
             mFilename = Environment.getExternalStorageDirectory().getAbsolutePath();
         }
         mFilename += "/audiorecordtest.mp3";
+<<<<<<< HEAD
         mPlayer = new LoopMediaPlayer(getApplicationContext(),this.mFilename );
         mPlayer.stop();
         mPlayer.reset();
         mPlayer.release();
         Log.d("FILENAME_ON_CREATE",mFilename);
+=======
+
+
+
+>>>>>>> bc1e5469c686dff39c5d71491f0f76a6219b05fb
         final PadButton btn1 = (PadButton)findViewById(R.id.button1);
         final PadButton btn2 = (PadButton)findViewById(R.id.button2);
         final PadButton btn3 = (PadButton)findViewById(R.id.button3);
