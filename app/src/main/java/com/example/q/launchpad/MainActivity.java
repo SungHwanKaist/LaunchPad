@@ -171,22 +171,28 @@ private String[] PERMISSIONS = {
 
         btn1.addMediaPlayer(MediaPlayer.create(this, R.raw.bass1));
         btn2.addMediaPlayer(MediaPlayer.create(this, R.raw.bass2));
-        btn3.addMediaPlayer(MediaPlayer.create(this, R.raw.bell1));
-        btn4.addMediaPlayer(MediaPlayer.create(this, R.raw.hihat1));
-        btn5.addMediaPlayer(MediaPlayer.create(this, R.raw.hihat2));
-        btn6.addMediaPlayer(MediaPlayer.create(this, R.raw.hihat3));
-        btn7.addMediaPlayer(MediaPlayer.create(this, R.raw.snare1));
-        btn8.addMediaPlayer(MediaPlayer.create(this, R.raw.snare2));
-        btn9.addMediaPlayer(MediaPlayer.create(this, R.raw.snare3));
+        btn3.addMediaPlayer(MediaPlayer.create(this, R.raw.bass3));
+        btn4.addMediaPlayer(MediaPlayer.create(this, R.raw.bell1));
+        btn5.addMediaPlayer(MediaPlayer.create(this, R.raw.hihat1));
+        btn6.addMediaPlayer(MediaPlayer.create(this, R.raw.hihat2));
+        btn7.addMediaPlayer(MediaPlayer.create(this, R.raw.hihat3));
+        btn8.addMediaPlayer(MediaPlayer.create(this, R.raw.hihat4));
+        btn9.addMediaPlayer(MediaPlayer.create(this, R.raw.hihat5));
         btn10.addMediaPlayer(MediaPlayer.create(this, R.raw.kick1));
         btn11.addMediaPlayer(MediaPlayer.create(this, R.raw.kick2));
         btn12.addMediaPlayer(MediaPlayer.create(this, R.raw.kick3));
-        btn13.addMediaPlayer(MediaPlayer.create(this, R.raw.drum1));
-        btn14.addMediaPlayer(MediaPlayer.create(this, R.raw.drum2));
-        btn15.addMediaPlayer(MediaPlayer.create(this, R.raw.drum3));
-        btn16.addMediaPlayer(MediaPlayer.create(this, R.raw.clap1));
-        btn17.addMediaPlayer(MediaPlayer.create(this, R.raw.clap2));
-        btn18.addMediaPlayer(MediaPlayer.create(this, R.raw.sound1));
+        btn13.addMediaPlayer(MediaPlayer.create(this, R.raw.kick4));
+        btn14.addMediaPlayer(MediaPlayer.create(this, R.raw.drum1));
+        btn15.addMediaPlayer(MediaPlayer.create(this, R.raw.drum2));
+        btn16.addMediaPlayer(MediaPlayer.create(this, R.raw.drum3));
+        btn17.addMediaPlayer(MediaPlayer.create(this, R.raw.clap1));
+        btn18.addMediaPlayer(MediaPlayer.create(this, R.raw.clap2));
+        btn19.addMediaPlayer(MediaPlayer.create(this, R.raw.sound1));
+        btn20.addMediaPlayer(MediaPlayer.create(this, R.raw.sound2));
+        btn21.addMediaPlayer(MediaPlayer.create(this, R.raw.sound3));
+        btn22.addMediaPlayer(MediaPlayer.create(this, R.raw.sound4));
+        btn23.addMediaPlayer(MediaPlayer.create(this, R.raw.sound5));
+        btn24.addMediaPlayer(MediaPlayer.create(this, R.raw.sound6));
 
         btn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -280,32 +286,32 @@ private String[] PERMISSIONS = {
         });
         btn19.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn14.startAudio();
+                btn19.startAudio();
             }
         });
         btn20.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn15.startAudio();
+                btn20.startAudio();
             }
         });
         btn21.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn16.startAudio();
+                btn21.startAudio();
             }
         });
         btn22.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn17.startAudio();
+                btn22.startAudio();
             }
         });
         btn23.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn18.startAudio();
+                btn23.startAudio();
             }
         });
         btn24.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btn18.startAudio();
+                btn24.startAudio();
             }
         });
     }
