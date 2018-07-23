@@ -11,9 +11,9 @@
         android:id="@+id/GridLayout1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:columnCount="6"
-        android:rowCount="4"
+        android:rowCount="5"
         android:orientation="horizontal"
         tools:context=".MainActivity" >
 
@@ -208,13 +208,321 @@
             android:layout_gravity="fill"
             android:layout_margin="5dip"
             android:background="@color/dark_gray"/>
+
+        <com.example.q.launchpad.PadButton
+            android:id="@+id/button25"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="5dip"
+            android:background="@color/bisque"/>
+
+        <com.example.q.launchpad.PadButton
+            android:id="@+id/button26"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="5dip"
+            android:background="@color/mediumPurple"/>
+
+        <com.example.q.launchpad.PadButton
+            android:id="@+id/button27"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="5dip"
+            android:background="@color/sky_blue"/>
+
+        <com.example.q.launchpad.PadButton
+            android:id="@+id/button28"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="5dip"
+            android:background="@color/dark_slate_gray"/>
+
+        <com.example.q.launchpad.PadButton
+            android:id="@+id/button29"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="5dip"
+            android:background="@color/hot_pink"/>
+
+        <com.example.q.launchpad.PadButton
+            android:id="@+id/button30"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="5dip"
+            android:background="@color/pale_green"/>
     </GridLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="3"
+        android:layout_margin="5dip">
+
+        <HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:layout_width="100dip"
+                        android:layout_height="match_parent"
+                        android:id="@+id/piano_white1"
+                        android:background="@android:drawable/editbox_background_normal" />
+
+                    <Button
+                        android:layout_width="100dip"
+                        android:layout_height="match_parent"
+                        android:id="@+id/piano_white2"
+                        android:background="@android:drawable/editbox_background_normal" />
+
+                    <Button
+                        android:layout_width="100dip"
+                        android:layout_height="match_parent"
+                        android:id="@+id/piano_white3"
+                        android:background="@android:drawable/editbox_background_normal" />
+
+                    <Button
+                        android:layout_width="100dip"
+                        android:layout_height="match_parent"
+                        android:id="@+id/piano_white4"
+                        android:background="@android:drawable/editbox_background_normal" />
+
+                    <Button
+                        android:layout_width="100dip"
+                        android:layout_height="match_parent"
+                        android:id="@+id/piano_white5"
+                        android:background="@android:drawable/editbox_background_normal" />
+
+                    <Button
+                        android:layout_width="100dip"
+                        android:layout_height="match_parent"
+                        android:id="@+id/piano_white6"
+                        android:background="@android:drawable/editbox_background_normal" />
+
+                    <Button
+                        android:layout_width="100dip"
+                        android:layout_height="match_parent"
+                        android:id="@+id/piano_white7"
+                        android:background="@android:drawable/editbox_background_normal" />
+
+                    <Button
+                        android:layout_width="100dip"
+                        android:layout_height="match_parent"
+                        android:id="@+id/piano_white8"
+                        android:background="@android:drawable/editbox_background_normal" />
+
+                    <Button
+                        android:layout_width="100dip"
+                        android:layout_height="match_parent"
+                        android:id="@+id/piano_white9"
+                        android:background="@android:drawable/editbox_background_normal" />
+
+                    <Button
+                        android:layout_width="100dip"
+                        android:layout_height="match_parent"
+                        android:id="@+id/piano_white10"
+                        android:background="@android:drawable/editbox_background_normal" />
+
+                    <Button
+                        android:layout_width="100dip"
+                        android:layout_height="match_parent"
+                        android:id="@+id/piano_white11"
+                        android:background="@android:drawable/editbox_background_normal" />
+
+                    <Button
+                        android:layout_width="100dip"
+                        android:layout_height="match_parent"
+                        android:id="@+id/piano_white12"
+                        android:background="@android:drawable/editbox_background_normal" />
+
+                    <Button
+                        android:layout_width="100dip"
+                        android:layout_height="match_parent"
+                        android:id="@+id/piano_white13"
+                        android:background="@android:drawable/editbox_background_normal" />
+
+                    <Button
+                        android:layout_width="100dip"
+                        android:layout_height="match_parent"
+                        android:id="@+id/piano_white14"
+                        android:background="@android:drawable/editbox_background_normal" />
+
+                    <Button
+                        android:layout_width="100dip"
+                        android:layout_height="match_parent"
+                        android:id="@+id/piano_white15"
+                        android:background="@android:drawable/editbox_background_normal" />
+
+                    <Button
+                        android:layout_width="100dip"
+                        android:layout_height="match_parent"
+                        android:id="@+id/piano_white16"
+                        android:background="@android:drawable/editbox_background_normal" />
+
+                    <Button
+                        android:layout_width="100dip"
+                        android:layout_height="match_parent"
+                        android:id="@+id/piano_white17"
+                        android:background="@android:drawable/editbox_background_normal" />
+
+                    <Button
+                        android:layout_width="100dip"
+                        android:layout_height="match_parent"
+                        android:id="@+id/piano_white18"
+                        android:background="@android:drawable/editbox_background_normal" />
+
+                    <Button
+                        android:layout_width="100dip"
+                        android:layout_height="match_parent"
+                        android:id="@+id/piano_white19"
+                        android:background="@android:drawable/editbox_background_normal" />
+
+                    <Button
+                        android:layout_width="100dip"
+                        android:layout_height="match_parent"
+                        android:id="@+id/piano_white20"
+                        android:background="@android:drawable/editbox_background_normal" />
+
+                    <Button
+                        android:layout_width="100dip"
+                        android:layout_height="match_parent"
+                        android:id="@+id/piano_white21"
+                        android:background="@android:drawable/editbox_background_normal" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:layout_width="50dip"
+                        android:layout_height="210dip"
+                        android:id="@+id/piano_black1"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="75dip"
+                        android:background="@android:drawable/screen_background_dark" />
+                    <Button
+                        android:layout_width="50dip"
+                        android:layout_height="210dip"
+                        android:id="@+id/piano_black2"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="50dip"
+                        android:background="@android:drawable/screen_background_dark" />
+
+                    <Button
+                        android:layout_width="50dip"
+                        android:layout_height="210dip"
+                        android:id="@+id/piano_black3"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="150dip"
+                        android:background="@android:drawable/screen_background_dark" />
+                    <Button
+                        android:layout_width="50dip"
+                        android:layout_height="210dip"
+                        android:id="@+id/piano_black4"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="50dip"
+                        android:background="@android:drawable/screen_background_dark" />
+                    <Button
+                        android:layout_width="50dip"
+                        android:layout_height="210dip"
+                        android:id="@+id/piano_black5"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="50dip"
+                        android:background="@android:drawable/screen_background_dark" />
+                    <Button
+                        android:layout_width="50dip"
+                        android:layout_height="210dip"
+                        android:id="@+id/piano_black6"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="150dip"
+                        android:background="@android:drawable/screen_background_dark" />
+                    <Button
+                        android:layout_width="50dip"
+                        android:layout_height="210dip"
+                        android:id="@+id/piano_black7"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="50dip"
+                        android:background="@android:drawable/screen_background_dark" />
+
+                    <Button
+                        android:layout_width="50dip"
+                        android:layout_height="210dip"
+                        android:id="@+id/piano_black8"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="150dip"
+                        android:background="@android:drawable/screen_background_dark" />
+                    <Button
+                        android:layout_width="50dip"
+                        android:layout_height="210dip"
+                        android:id="@+id/piano_black9"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="50dip"
+                        android:background="@android:drawable/screen_background_dark" />
+                    <Button
+                        android:layout_width="50dip"
+                        android:layout_height="210dip"
+                        android:id="@+id/piano_black10"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="50dip"
+                        android:background="@android:drawable/screen_background_dark" />
+
+                    <Button
+                        android:layout_width="50dip"
+                        android:layout_height="210dip"
+                        android:id="@+id/piano_black11"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="150dip"
+                        android:background="@android:drawable/screen_background_dark" />
+                    <Button
+                        android:layout_width="50dip"
+                        android:layout_height="210dip"
+                        android:id="@+id/piano_black12"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="50dip"
+                        android:background="@android:drawable/screen_background_dark" />
+
+                    <Button
+                        android:layout_width="50dip"
+                        android:layout_height="210dip"
+                        android:id="@+id/piano_black13"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="150dip"
+                        android:background="@android:drawable/screen_background_dark" />
+                    <Button
+                        android:layout_width="50dip"
+                        android:layout_height="210dip"
+                        android:id="@+id/piano_black14"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="50dip"
+                        android:background="@android:drawable/screen_background_dark" />
+                    <Button
+                        android:layout_width="50dip"
+                        android:layout_height="210dip"
+                        android:id="@+id/piano_black15"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="50dip"
+                        android:background="@android:drawable/screen_background_dark" />
+                </LinearLayout>
+            </FrameLayout>
+        </HorizontalScrollView>
 
     </LinearLayout>
 </LinearLayout>

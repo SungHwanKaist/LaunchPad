@@ -182,6 +182,12 @@ private String[] PERMISSIONS = {
         final int beat22 = beatpool.load(this, R.raw.snare1, 1);
         final int beat23 = beatpool.load(this, R.raw.snare2, 1);
         final int beat24 = beatpool.load(this, R.raw.snare3, 1);
+        final int beat25 = beatpool.load(this, R.raw.sound1, 1);
+        final int beat26 = beatpool.load(this, R.raw.sound2, 1);
+        final int beat27 = beatpool.load(this, R.raw.sound3, 1);
+        final int beat28 = beatpool.load(this, R.raw.sound4, 1);
+        final int beat29 = beatpool.load(this, R.raw.sound5, 1);
+        final int beat30 = beatpool.load(this, R.raw.sound6, 1);
 
         final PadButton btn1 = (PadButton)findViewById(R.id.button1);
         final PadButton btn2 = (PadButton)findViewById(R.id.button2);
@@ -207,6 +213,12 @@ private String[] PERMISSIONS = {
         final PadButton btn22 = (PadButton)findViewById(R.id.button22);
         final PadButton btn23 = (PadButton)findViewById(R.id.button23);
         final PadButton btn24 = (PadButton)findViewById(R.id.button24);
+        final PadButton btn25 = (PadButton)findViewById(R.id.button25);
+        final PadButton btn26 = (PadButton)findViewById(R.id.button26);
+        final PadButton btn27 = (PadButton)findViewById(R.id.button27);
+        final PadButton btn28 = (PadButton)findViewById(R.id.button28);
+        final PadButton btn29 = (PadButton)findViewById(R.id.button29);
+        final PadButton btn30 = (PadButton)findViewById(R.id.button30);
 
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -329,6 +341,38 @@ private String[] PERMISSIONS = {
                 beatpool.play(beat24, 1.0F, 1.0F, 0, 0, 1.0F);
             }
         });
+        btn25.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                beatpool.play(beat25, 1.0F, 1.0F, 0, 0, 1.0F);
+            }
+        });
+        btn26.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                beatpool.play(beat26, 1.0F, 1.0F, 0, 0, 1.0F);
+            }
+        });
+        btn27.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                beatpool.play(beat27, 1.0F, 1.0F, 0, 0, 1.0F);
+            }
+        });
+        btn28.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                beatpool.play(beat28, 1.0F, 1.0F, 0, 0, 1.0F);
+            }
+        });
+        btn29.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                beatpool.play(beat29, 1.0F, 1.0F, 0, 0, 1.0F);
+            }
+        });
+        btn30.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                beatpool.play(beat30, 1.0F, 1.0F, 0, 0, 1.0F);
+            }
+        });
+
+        final SoundPool pianopool = new SoundPool(36, AudioManager.STREAM_MUSIC, 0);
     }
 
 }
