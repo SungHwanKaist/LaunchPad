@@ -51,6 +51,7 @@ public class LoopMediaPlayer {
         mNextPlayer = new MediaPlayer();
         try {
             mNextPlayer.setDataSource(mPath);
+            mNextPlayer.setVolume(1,1);
             mNextPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                 @Override
                 public void onPrepared(MediaPlayer mp) {

@@ -3,6 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <!-- 액션 버튼으로써 나타나는 "서치" 아이템  -->
+    <item android:id="@+id/music"
+        android:title="@string/music_play"
+        android:icon="@drawable/play_arrow"
+        app:showAsAction="ifRoom" />
+    <item android:id="@+id/music_stop"
+        android:title="@string/music_stop"
+        android:icon="@drawable/stop"
+        app:showAsAction="ifRoom" />
     <item android:id="@+id/record"
         android:icon="@drawable/manual_record"
         android:title="@string/action_record"

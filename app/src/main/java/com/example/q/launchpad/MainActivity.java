@@ -19,13 +19,16 @@ import android.widget.Button;
 import android.media.AudioManager;
 
 import java.io.File;
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
     private String mFilename = null;
     private LoopMediaPlayer mPlayer = null;
 //    private MediaPlayer mPlayer = null;
     private LoopMediaRecorder mRecorder = null;
+    private MediaPlayer mMusicPlayer = null;
     private Menu menu;
+    private String mPath = null;
 //    private LoopMediaRecorder mRecorder = new LoopMediaRecorder(mFilename);
 //    private LoopMediaPlayer
 private String[] PERMISSIONS = {
@@ -40,8 +43,12 @@ private String[] PERMISSIONS = {
         inflater.inflate(R.menu.menu_main, menu);
         MenuItem item = menu.findItem(R.id.stop_record);
         MenuItem item2 = menu.findItem(R.id.stop_play);
+        MenuItem item3 = menu.findItem(R.id.music_stop);
+
         item.setVisible(false);
         item2.setVisible(false);
+        item3.setVisible(false);
+
         return super.onCreateOptionsMenu(menu);
     }
     @Override
@@ -54,6 +61,18 @@ private String[] PERMISSIONS = {
         // Handle presses on the action bar items
         String t = (String) item.getTitle();
         switch (item.getItemId()) {
+            case R.id.music:
+                startMusic();
+                item.setVisible(false);
+                MenuItem itt = this.menu.findItem(R.id.music_stop);
+                itt.setVisible(true);
+                return true;
+            case R.id.music_stop:
+                stopMusic();
+                item.setVisible(false);
+                MenuItem itt2 = this.menu.findItem(R.id.music);
+                itt2.setVisible(true);
+                return true;
             case R.id.record:
                     startRecord();
                     item.setVisible(false);
@@ -80,6 +99,25 @@ private String[] PERMISSIONS = {
                     return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void stopMusic() {
+        mMusicPlayer.stop();
+        mMusicPlayer.reset();
+        mMusicPlayer.release();
+        mMusicPlayer = null;
+    }
+
+    private void startMusic() {
+        mMusicPlayer = new MediaPlayer();
+        try {
+            mMusicPlayer.setDataSource(mPath);
+            mMusicPlayer.setVolume(1,1);
+            mMusicPlayer.prepare();
+            mMusicPlayer.start();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -154,6 +192,15 @@ private String[] PERMISSIONS = {
             mFilename = Environment.getExternalStorageDirectory().getAbsolutePath();
         }
         mFilename += "/audiorecordtest.mp3";
+
+        if( !sdcard.equals(Environment.MEDIA_MOUNTED)) {
+            mPath = Environment.getRootDirectory().getAbsolutePath();
+        }
+        else {
+            mPath = Environment.getExternalStorageDirectory().getAbsolutePath();
+        }
+        mPath += "/Download/Q.mp3";
+
 //        mPlayer = new LoopMediaPlayer(getApplicationContext(),this.mFilename );
         Log.d("FILENAME_ON_CREATE",mFilename);
 

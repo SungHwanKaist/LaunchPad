@@ -4,5 +4,7 @@
     <string name="action_play">play</string>
     <string name="action_stop_record">stop</string>
     <string name="action_stop">stop</string>
+    <string name="music_play">music</string>
+    <string name="music_stop">music</string>
 
 </resources>

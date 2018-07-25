@@ -30,10 +30,10 @@ public class LoopMediaRecorder extends MediaRecorder {
     }
     public LoopMediaRecorder(String mFileName) {
 
-        this.setAudioSource(AudioSource.VOICE_CALL );
+        this.setAudioSource(AudioSource.MIC );
         this.setOutputFormat(OutputFormat.MPEG_4);
         this.setOutputFile(mFileName);
-        this.setAudioEncoder(AudioEncoder.DEFAULT);
+        this.setAudioEncoder(AudioEncoder.HE_AAC);
     }
     public void startRecord (){
             try {
